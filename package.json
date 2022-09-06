@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "emulate": "dotenv -c -- firebase use --project demo-sspp && firebase emulators:start --export-on-exit=./seed --import=./seed"
+  },
+  "devDependencies": {
+    "dotenv-cli": "^6.0.0",
+    "firebase": "^9.9.0"
+  }
+}

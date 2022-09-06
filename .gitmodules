@@ -1,0 +1,3 @@
+[submodule "sspp-meat-raffle"]
+	path = sspp-meat-raffle
+	url = https://github.com/rrosiek/sspp-meat-raffle

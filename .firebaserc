@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "sspp-staging",
+    "staging": "sspp-staging",
+    "production": "sspp-production",
+    "emulator": "demo-sspp"
+  }
+}
