@@ -7,7 +7,10 @@ module.exports = async (purchaseSnap) => {
   const purchase = purchaseSnap.data();
   const squareAccessToken = functions.config().square.token;
   const squareEnv = functions.config().square.env;
-  const ticketCost = functions.config().raffle.ticket_cost;
+  const ticketCost =
+    purchase.event === "christmas"
+      ? functions.config().raffle.christmas_ticket_cost
+      : functions.config().raffle.meat_ticket_cost;
 
   const squareClient = new Client({
     environment:
@@ -42,7 +45,7 @@ module.exports = async (purchaseSnap) => {
       squarePurchase: result,
     });
 
-    return result;
+    return [false, result];
   } catch (err) {
     if (err instanceof ApiError) {
       console.error(err.result);
@@ -50,6 +53,6 @@ module.exports = async (purchaseSnap) => {
       console.error(err);
     }
 
-    throw err;
+    return [err, false];
   }
 };
