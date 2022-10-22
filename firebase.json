@@ -4,8 +4,14 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
-    "public": "meat-raffle/build",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    "public": "sspp-christmas-raffle/build",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**", "functions/**", "seed/**"],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
   },
   "storage": {
     "rules": "storage.rules"
