@@ -19,9 +19,7 @@ module.exports = async (purchaseSnap) => {
   });
 
   const amount =
-    purchase.ticketsPurchased * ticketCost +
-    (purchase.ccDonate ? 200 : 0) -
-    (purchase.ticketsPurchased === 8 ? 500 : 0);
+    purchase.ticketsPurchased * ticketCost + (purchase.ccDonate ? 200 : 0);
 
   const payment = {
     idempotencyKey,
